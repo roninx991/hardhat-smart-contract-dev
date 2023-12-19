@@ -1,0 +1,35 @@
+{
+  "name": "hardhat-smart-contract-dev",
+  "version": "1.0.0",
+  "description": "Template Repository for building EVM smart contract projects",
+  "main": "./src/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roninx991/hardhat-smart-contract-dev.git"
+  },
+  "keywords": [
+    "smart",
+    "contracts",
+    "hardhat",
+    "evm",
+    "blockchain",
+    "web3"
+  ],
+  "author": "https://github.com/roninx991",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/roninx991/hardhat-smart-contract-dev/issues"
+  },
+  "homepage": "https://github.com/roninx991/hardhat-smart-contract-dev#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/mongoose": "^5.11.97",
+    "hardhat": "^2.19.3",
+    "mongoose": "^8.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
