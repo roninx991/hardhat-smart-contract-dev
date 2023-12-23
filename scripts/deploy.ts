@@ -32,6 +32,8 @@ async function main() {
       lockedAmount
     )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
   );
+
+  process.exit(0);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
