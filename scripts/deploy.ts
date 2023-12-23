@@ -1,4 +1,6 @@
 import { ethers } from "hardhat";
+import { addContract, saveContract } from "../services/contract";
+import { getChain } from "../services/chain";
 
 async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
@@ -11,6 +13,19 @@ async function main() {
   });
 
   await lock.waitForDeployment();
+
+  let chain = await getChain(Number((await ethers.provider.getNetwork()).chainId))
+
+  if (chain.contracts.findIndex((contract) => contract.name == "Lock") >= 0) {
+    saveContract("Lock", lock);
+  } else {
+    addContract(
+      Number((await ethers.provider.getNetwork()).chainId), 
+      "Lock", 
+      lock.target.toString(), 
+      JSON.parse(lock.interface.formatJson())
+    )  
+  }
 
   console.log(
     `Lock with ${ethers.formatEther(

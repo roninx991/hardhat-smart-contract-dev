@@ -14,12 +14,7 @@ if (!process.env.MONGODB_URI) {
 
 const MONGODB_URI: string = process.env.MONGODB_URI;
 
-const conn = mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-});
+const conn = mongoose.connect(MONGODB_URI);
 
 export const connectDB = async() => {
   try {
